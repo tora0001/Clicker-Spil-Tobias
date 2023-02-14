@@ -12,29 +12,33 @@
   right: 0%;
 }
 
-#mink_1_sprite {
+#mink_1_container {
   outline: solid 2px black;
+  width: 12%;
   position: absolute;
   top: 40%;
   left: 50%;
 }
 
-#mink_2_sprite {
+#mink_2_container {
   outline: solid 2px black;
+  width: 12%;
   position: absolute;
   top: 25%;
   left: 20%;
 }
 
-#mink_3_sprite {
+#mink_3_container {
   outline: solid 2px black;
+  width: 12%;
   position: absolute;
   top: 70%;
   left: 30%;
 }
 
-#vote_1_sprite {
+#vote_1_container {
   outline: solid 2px black;
+  width: 10%;
   position: absolute;
   top: 60%;
   left: 60%;
