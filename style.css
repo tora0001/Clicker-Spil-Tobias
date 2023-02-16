@@ -2,9 +2,15 @@ body {
   margin: 0;
 }
 
-#screen {
-  aspect-ratio: 16/9;
+img {
   width: 100%;
+}
+
+#screen {
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 100%;
+  aspect-ratio: 16/9;
   position: relative;
   overflow: hidden;
 }
@@ -25,19 +31,11 @@ body {
   left: 50%;
 }
 
-#mink_1_sprite {
-  width: 100%;
-}
-
 #mink_2_container {
   width: 12%;
   position: absolute;
   top: 25%;
   left: 20%;
-}
-
-#mink_2_sprite {
-  width: 100%;
 }
 
 #mink_3_container {
@@ -47,17 +45,9 @@ body {
   left: 30%;
 }
 
-#mink_3_sprite {
-  width: 100%;
-}
-
 #vote_1_container {
   width: 10%;
   position: absolute;
   top: 60%;
   left: 60%;
-}
-
-#vote_1_sprite {
-  width: 100%;
 }

@@ -1,0 +1,106 @@
+#mink_1_container {
+  animation-name: mink_1_container;
+  animation-duration: 3s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-delay: 2s;
+  animation-fill-mode: backwards;
+}
+
+@keyframes mink_1_container {
+  0% {
+    transform: translate(-600%, 200%);
+  }
+  50% {
+    transform: translate(-185%, -200%);
+  }
+  100% {
+    transform: translate(230%, 200%);
+  }
+}
+
+#mink_1_sprite {
+  animation-name: mink_1_sprite;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes mink_1_sprite {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+#mink_2_container {
+  animation-name: mink_2_container;
+  animation-duration: 3s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-delay: 4s;
+  animation-fill-mode: backwards;
+}
+
+@keyframes mink_2_container {
+  0% {
+    transform: translate(-500%, 200%);
+  }
+  50% {
+    transform: translate(100%, 200%);
+  }
+  100% {
+    transform: translate(490%, 0%);
+  }
+}
+
+#mink_2_sprite {
+  animation-name: mink_2_sprite;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes mink_2_sprite {
+  0% {
+    transform: scale(0.5);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+  100% {
+    transform: scale(0.5);
+  }
+}
+
+#mink_3_container {
+  animation-name: mink_3_container;
+  animation-duration: 3s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-delay: 6s;
+  animation-fill-mode: backwards;
+}
+
+@keyframes mink_3_container {
+  0% {
+    transform: translate(-400%, -500%);
+  }
+  20% {
+    transform: translate(-200%, 0%);
+  }
+  40% {
+    transform: translate(0%, -300%);
+  }
+  60% {
+    transform: translate(200%, 100%);
+  }
+  80% {
+    transform: translate(300%, -200%);
+  }
+  100% {
+    transform: translate(400%, 0%);
+  }
+}
