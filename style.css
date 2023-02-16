@@ -1,5 +1,8 @@
+body {
+  margin: 0;
+}
+
 #screen {
-  outline: solid 2px black;
   aspect-ratio: 16/9;
   width: 100%;
   position: relative;
@@ -7,7 +10,6 @@
 }
 
 #background {
-  outline: solid 2px black;
   position: absolute;
   top: 0%;
   right: 0%;
@@ -16,7 +18,6 @@
 }
 
 #mink_1_container {
-  outline: solid 2px black;
   width: 12%;
   position: absolute;
   top: 40%;
@@ -28,7 +29,6 @@
 }
 
 #mink_2_container {
-  outline: solid 2px black;
   width: 12%;
   position: absolute;
   top: 25%;
@@ -40,7 +40,6 @@
 }
 
 #mink_3_container {
-  outline: solid 2px black;
   width: 12%;
   position: absolute;
   top: 70%;
@@ -52,7 +51,6 @@
 }
 
 #vote_1_container {
-  outline: solid 2px black;
   width: 10%;
   position: absolute;
   top: 60%;
