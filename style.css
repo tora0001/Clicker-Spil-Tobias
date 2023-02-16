@@ -11,6 +11,8 @@
   position: absolute;
   top: 0%;
   right: 0%;
+  width: 100%;
+  height: 100%;
 }
 
 #mink_1_container {
@@ -21,12 +23,20 @@
   left: 50%;
 }
 
+#mink_1_sprite {
+  width: 100%;
+}
+
 #mink_2_container {
   outline: solid 2px black;
   width: 12%;
   position: absolute;
   top: 25%;
   left: 20%;
+}
+
+#mink_2_sprite {
+  width: 100%;
 }
 
 #mink_3_container {
@@ -37,10 +47,18 @@
   left: 30%;
 }
 
+#mink_3_sprite {
+  width: 100%;
+}
+
 #vote_1_container {
   outline: solid 2px black;
   width: 10%;
   position: absolute;
   top: 60%;
   left: 60%;
+}
+
+#vote_1_sprite {
+  width: 100%;
 }
