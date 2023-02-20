@@ -45,6 +45,20 @@ img {
   left: 30%;
 }
 
+#mink_4_container {
+  width: 12%;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+}
+
+#mink_5_container {
+  width: 12%;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+}
+
 #vote_1_container {
   width: 10%;
   position: absolute;
