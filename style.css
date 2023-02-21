@@ -65,3 +65,10 @@ img {
   top: 60%;
   left: 60%;
 }
+
+#vote_2_container {
+  width: 10%;
+  position: absolute;
+  top: 60%;
+  left: 60%;
+}

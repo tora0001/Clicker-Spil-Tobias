@@ -1,6 +1,6 @@
 #mink_1_container {
   animation-name: mink_1_container;
-  animation-duration: 3s;
+  animation-duration: 6s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
   animation-delay: 2s;
@@ -37,7 +37,7 @@
 
 #mink_2_container {
   animation-name: mink_2_container;
-  animation-duration: 3s;
+  animation-duration: 6s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
   animation-delay: 4s;
@@ -77,7 +77,7 @@
 
 #mink_3_container {
   animation-name: mink_3_container;
-  animation-duration: 3s;
+  animation-duration: 6s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
   animation-delay: 6s;
@@ -105,21 +105,112 @@
   }
 }
 
+#mink_4_container {
+  animation-name: mink_4_container;
+  animation-duration: 6s;
+  animation-timing-function: ease-in;
+  animation-iteration-count: infinite;
+  animation-delay: 8s;
+  animation-fill-mode: backwards;
+}
+
+@keyframes mink_4_container {
+  0% {
+    transform: translate(-600%, 200%);
+  }
+  50% {
+    transform: translate(-105%, 200%);
+  }
+  100% {
+    transform: translate(230%, 200%);
+  }
+}
+
+#mink_4_sprite {
+  animation-name: mink_4_sprite;
+  animation-duration: 3s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes mink_4_sprite {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+#mink_5_container {
+  animation-name: mink_5_container;
+  animation-duration: 8s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-delay: 10s;
+  animation-fill-mode: backwards;
+}
+
+@keyframes mink_5_container {
+  0% {
+    transform: translate(-600%, -200%);
+  }
+  50% {
+    transform: translate(-105%, -200%);
+  }
+  100% {
+    transform: translate(230%, 200%);
+  }
+}
+
+#mink_5_sprite {
+  animation-name: mink_5_sprite;
+  animation-duration: 3s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes mink_5_sprite {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 #vote_1_container {
   animation-name: vote_1_container;
-  animation-duration: 1s;
+  animation-duration: 5s;
+  animation-delay: 5s;
   animation-timing-function: linear;
+  animation-fill-mode: backwards;
   animation-iteration-count: infinite;
 }
 
 @keyframes vote_1_container {
   0% {
-    transform: scale(0.5);
-  }
-  50% {
-    transform: scale(1.5);
+    transform: translate(-700%, 105%);
   }
   100% {
-    transform: scale(0.5);
+    transform: translate(200%, 105%);
+  }
+}
+
+#vote_2_container {
+  animation-name: vote_2_container;
+  animation-duration: 6s;
+  animation-timing-function: linear;
+  animation-delay: 15s;
+  animation-fill-mode: backwards;
+  animation-iteration-count: infinite;
+}
+
+@keyframes vote_2_container {
+  0% {
+    transform: translate(-700%, -150%);
+  }
+  100% {
+    transform: translate(200%, -150%);
   }
 }
