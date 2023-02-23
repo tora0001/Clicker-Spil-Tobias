@@ -75,7 +75,6 @@ function minkGone1() {
   document.querySelector("#mink_1_container").classList.remove("mink_1_move");
   document.querySelector("#mink_1_container").offsetWidth;
   document.querySelector("#mink_1_container").classList.add("mink_1_move");
-
   document
     .querySelector("#mink_1_container")
     .addEventListener("mousedown", clickMink1);
