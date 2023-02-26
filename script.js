@@ -91,7 +91,7 @@ function clickMink2() {
 
   document
     .querySelector("#mink_2_container")
-    .addEventListener("disapear", minkGone2);
+    .addEventListener("animationend", minkGone2);
 }
 
 function minkGone2() {
@@ -102,6 +102,13 @@ function minkGone2() {
   document.querySelector("#mink_2_sprite").classList.remove("disapear");
 
   document.querySelector("#mink_2_container").classList.remove("paused");
+
+  document.querySelector("#mink_2_container").classList.remove("mink_2_move");
+  document.querySelector("#mink_2_container").offsetWidth;
+  document.querySelector("#mink_2_container").classList.add("mink_2_move");
+  document
+    .querySelector("#mink_2_container")
+    .addEventListener("mousedown", clickMink2);
 }
 
 function clickMink3() {
@@ -115,7 +122,7 @@ function clickMink3() {
 
   document
     .querySelector("#mink_3_container")
-    .addEventListener("disapear", minkGone3);
+    .addEventListener("animationend", minkGone3);
 }
 
 function minkGone3() {
@@ -126,6 +133,13 @@ function minkGone3() {
   document.querySelector("#mink_3_sprite").classList.remove("disapear");
 
   document.querySelector("#mink_3_container").classList.remove("paused");
+
+  document.querySelector("#mink_3_container").classList.remove("mink_3_move");
+  document.querySelector("#mink_3_container").offsetWidth;
+  document.querySelector("#mink_3_container").classList.add("mink_3_move");
+  document
+    .querySelector("#mink_3_container")
+    .addEventListener("mousedown", clickMink3);
 }
 
 function clickMink4() {
@@ -139,7 +153,7 @@ function clickMink4() {
 
   document
     .querySelector("#mink_4_container")
-    .addEventListener("disapear", minkGone4);
+    .addEventListener("animationend", minkGone4);
 }
 
 function minkGone4() {
@@ -150,6 +164,13 @@ function minkGone4() {
   document.querySelector("#mink_4_sprite").classList.remove("disapear");
 
   document.querySelector("#mink_4_container").classList.remove("paused");
+
+  document.querySelector("#mink_4_container").classList.remove("mink_4_move");
+  document.querySelector("#mink_4_container").offsetWidth;
+  document.querySelector("#mink_4_container").classList.add("mink_4_move");
+  document
+    .querySelector("#mink_4_container")
+    .addEventListener("mousedown", clickMink4);
 }
 
 function clickMink5() {
@@ -163,7 +184,7 @@ function clickMink5() {
 
   document
     .querySelector("#mink_5_container")
-    .addEventListener("disapear", minkGone5);
+    .addEventListener("animationend", minkGone5);
 }
 
 function minkGone5() {
@@ -174,6 +195,13 @@ function minkGone5() {
   document.querySelector("#mink_5_sprite").classList.remove("disapear");
 
   document.querySelector("#mink_5_container").classList.remove("paused");
+
+  document.querySelector("#mink_5_container").classList.remove("mink_5_move");
+  document.querySelector("#mink_5_container").offsetWidth;
+  document.querySelector("#mink_5_container").classList.add("mink_5_move");
+  document
+    .querySelector("#mink_5_container")
+    .addEventListener("mousedown", clickMink5);
 }
 
 function clickVote1() {
@@ -187,7 +215,7 @@ function clickVote1() {
 
   document
     .querySelector("#vote_1_container")
-    .addEventListener("disapear2", voteGone1);
+    .addEventListener("animationend", voteGone1);
 }
 
 function voteGone1() {
@@ -198,6 +226,13 @@ function voteGone1() {
   document.querySelector("#vote_1_sprite").classList.remove("disapear2");
 
   document.querySelector("#vote_1_container").classList.remove("paused");
+
+  document.querySelector("#vote_1_container").classList.remove("vote_1_move");
+  document.querySelector("#vote_1_container").offsetWidth;
+  document.querySelector("#vote_1_container").classList.add("vote_1_move");
+  document
+    .querySelector("#vote_1_container")
+    .addEventListener("mousedown", clickVote1);
 }
 
 function clickVote2() {
@@ -211,7 +246,7 @@ function clickVote2() {
 
   document
     .querySelector("#vote_2_container")
-    .addEventListener("disapear2", voteGone2);
+    .addEventListener("enimationend", voteGone2);
 }
 
 function voteGone2() {
@@ -222,4 +257,11 @@ function voteGone2() {
   document.querySelector("#vote_2_sprite").classList.remove("disapear2");
 
   document.querySelector("#vote_2_container").classList.remove("paused");
+
+  document.querySelector("#vote_2_container").classList.remove("vote_2_move");
+  document.querySelector("#vote_2_container").offsetWidth;
+  document.querySelector("#vote_2_container").classList.add("vote_2_move");
+  document
+    .querySelector("#vote_2_container")
+    .addEventListener("mousedown", clickVote2);
 }

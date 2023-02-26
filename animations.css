@@ -1,4 +1,4 @@
-#mink_1_container {
+.mink_1_move {
   animation-name: mink_1_move;
   animation-duration: 6s;
   animation-timing-function: linear;
@@ -19,7 +19,7 @@
   }
 }
 
-#mink_2_container {
+.mink_2_move {
   animation-name: mink_2_move;
   animation-duration: 6s;
   animation-timing-function: linear;
@@ -40,7 +40,7 @@
   }
 }
 
-#mink_3_container {
+.mink_3_move {
   animation-name: mink_3_move;
   animation-duration: 6s;
   animation-timing-function: linear;
@@ -70,7 +70,7 @@
   }
 }
 
-#mink_4_container {
+.mink_4_move {
   animation-name: mink_4_move;
   animation-duration: 6s;
   animation-timing-function: ease-in;
@@ -91,7 +91,7 @@
   }
 }
 
-#mink_5_container {
+.mink_5_move {
   animation-name: mink_5_move;
   animation-duration: 8s;
   animation-timing-function: linear;
@@ -112,7 +112,7 @@
   }
 }
 
-#vote_1_container {
+.vote_1_move {
   animation-name: vote_1_move;
   animation-duration: 5s;
   animation-delay: 5s;
@@ -130,7 +130,7 @@
   }
 }
 
-#vote_2_container {
+.vote_2_move {
   animation-name: vote_2_move;
   animation-duration: 6s;
   animation-timing-function: linear;
@@ -183,7 +183,7 @@
     opacity: 1;
   }
   100% {
-    transform: scale(5);
+    transform: scale(2);
     opacity: 0;
   }
 }
