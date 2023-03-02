@@ -1,13 +1,13 @@
-.mink_1_move {
-  animation-name: mink_1_move;
-  animation-duration: 6s;
+.minkMove1 {
+  animation-name: minkMove1;
+  animation-duration: 4s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
-  animation-delay: 2s;
+  animation-delay: 1s;
   animation-fill-mode: backwards;
 }
 
-@keyframes mink_1_move {
+@keyframes minkMove1 {
   0% {
     transform: translate(-600%, 200%) rotate(0deg);
   }
@@ -19,16 +19,16 @@
   }
 }
 
-.mink_2_move {
-  animation-name: mink_2_move;
+.minkMove2 {
+  animation-name: minkMove2;
   animation-duration: 4s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
-  animation-delay: 4s;
+  animation-delay: 2s;
   animation-fill-mode: backwards;
 }
 
-@keyframes mink_2_move {
+@keyframes minkMove2 {
   0% {
     transform: translate(-550%, 200%);
   }
@@ -40,46 +40,46 @@
   }
 }
 
-.mink_3_move {
-  animation-name: mink_3_ove;
-  animation-duration: 6s;
+.minkMove3 {
+  animation-name: minkMove3;
+  animation-duration: 4s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
-  animation-delay: 6s;
+  animation-delay: 3s;
   animation-fill-mode: backwards;
 }
 
-@keyframes mink_3_move {
+@keyframes minkMove3 {
   0% {
-    transform: translate(-400%, -500%);
+    transform: translate(-600%, 200%);
   }
   20% {
-    transform: translate(-200%, 0%);
+    transform: translate(-400%, 100%);
   }
   40% {
-    transform: translate(0%, -300%);
+    transform: translate(-200%, 0%);
   }
   60% {
-    transform: translate(200%, 100%);
+    transform: translate(0%, 100%);
   }
   80% {
-    transform: translate(300%, -200%);
+    transform: translate(100%, -100%);
   }
   100% {
-    transform: translate(400%, 0%);
+    transform: translate(220%, 0%);
   }
 }
 
-.mink_4_move {
-  animation-name: mink_4_ove;
-  animation-duration: 6s;
+.minkMove4 {
+  animation-name: minkMove4;
+  animation-duration: 4s;
   animation-timing-function: ease-in;
   animation-iteration-count: infinite;
-  animation-delay: 8s;
+  animation-delay: 4s;
   animation-fill-mode: backwards;
 }
 
-@keyframes mink_4_move {
+@keyframes minkMove4 {
   0% {
     transform: translate(-600%, 200%) rotate(0deg);
   }
@@ -91,37 +91,37 @@
   }
 }
 
-.mink_5_move {
-  animation-name: mink_5_ove;
-  animation-duration: 8s;
+.minkMove5 {
+  animation-name: minkMove5;
+  animation-duration: 4s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
-  animation-delay: 10s;
+  animation-delay: 5s;
   animation-fill-mode: backwards;
 }
 
-@keyframes mink_5_move {
+@keyframes minkMove5 {
   0% {
-    transform: translate(-600%, -200%);
+    transform: translate(-600%, -150%);
   }
   50% {
-    transform: translate(-105%, -200%);
+    transform: translate(-105%, -150%);
   }
   100% {
     transform: translate(230%, 200%);
   }
 }
 
-.vote_1_move {
-  animation-name: vote_1_move;
+.voteMove1 {
+  animation-name: voteMove1;
   animation-duration: 5s;
-  animation-delay: 5s;
+  animation-delay: 4s;
   animation-timing-function: linear;
   animation-fill-mode: backwards;
   animation-iteration-count: infinite;
 }
 
-@keyframes vote_1_move {
+@keyframes voteMove1 {
   0% {
     transform: translate(-700%, 105%);
   }
@@ -130,16 +130,16 @@
   }
 }
 
-.vote_2_move {
-  animation-name: vote_2_move;
-  animation-duration: 6s;
+.voteMove2 {
+  animation-name: voteMove2;
+  animation-duration: 4s;
   animation-timing-function: linear;
-  animation-delay: 15s;
+  animation-delay: 8s;
   animation-fill-mode: backwards;
   animation-iteration-count: infinite;
 }
 
-@keyframes vote_2_move {
+@keyframes voteMove2 {
   0% {
     transform: translate(-700%, -150%);
   }

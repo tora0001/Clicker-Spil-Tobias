@@ -7,196 +7,111 @@ let points = 0;
 function start() {
   points = 0;
 
-  document.querySelector("#mink_1_container").classList.add("mink_1_move");
+  startAnimationer();
 
-  document.querySelector("#mink_1_container").addEventListener("mousedown", clickMink1);
+  registrerClicks();
 
-  document.querySelector("#mink_2_container").classList.add("mink_2_move");
-
-  document.querySelector("#mink_2_container").addEventListener("mousedown", clickMink2);
-
-  document.querySelector("#mink_3_container").classList.add("mink_3_move");
-
-  document.querySelector("#mink_3_container").addEventListener("mousedown", clickMink3);
-
-  document.querySelector("#mink_4_container").classList.add("mink_4_move");
-
-  document.querySelector("#mink_4_container").addEventListener("mousedown", clickMink4);
-
-  document.querySelector("#mink_5_container").classList.add("mink_5_move");
-
-  document.querySelector("#mink_5_container").addEventListener("mousedown", clickMink5);
-
-  document.querySelector("#vote_1_container").classList.add("vote_1_move");
-
-  document.querySelector("#vote_1_container").addEventListener("mousedown", clickVote1);
-
-  document.querySelector("#vote_2_container").classList.add("vote_2_move");
-
-  document.querySelector("#vote_2_container").addEventListener("mousedown", clickVote2);
+  animationRestart();
 }
 
-function clickMink1() {
-  document.querySelector("#mink_1_container").removeEventListener("mousedown", clickMink1);
+function startAnimationer() {
+  document.querySelector("#mink_1_container").classList.add("minkMove1");
+  document.querySelector("#mink_2_container").classList.add("minkMove2");
+  document.querySelector("#mink_3_container").classList.add("minkMove3");
+  document.querySelector("#mink_4_container").classList.add("minkMove4");
+  document.querySelector("#mink_5_container").classList.add("minkMove5");
+  document.querySelector("#vote_1_container").classList.add("voteMove1");
+  document.querySelector("#vote_2_container").classList.add("voteMove2");
+}
 
-  document.querySelector("#mink_1_container").classList.add("paused");
+function registrerClicks() {
+  document.querySelector("#mink_1_container").addEventListener("mousedown", clickMink);
+  document.querySelector("#mink_2_container").addEventListener("mousedown", clickMink);
+  document.querySelector("#mink_3_container").addEventListener("mousedown", clickMink);
+  document.querySelector("#mink_4_container").addEventListener("mousedown", clickMink);
+  document.querySelector("#mink_5_container").addEventListener("mousedown", clickMink);
+  document.querySelector("#vote_1_container").addEventListener("mousedown", clickVote);
+  document.querySelector("#vote_2_container").addEventListener("mousedown", clickVote);
+}
 
-  document.querySelector("#mink_1_sprite").classList.add("disapear");
+function animationRestart() {
+  document.querySelector("#mink_1_container").addEventListener("animationiteration", minkRestart);
+  document.querySelector("#mink_2_container").addEventListener("animationiteration", minkRestart);
+  document.querySelector("#mink_3_container").addEventListener("animationiteration", minkRestart);
+  document.querySelector("#mink_4_container").addEventListener("animationiteration", minkRestart);
+  document.querySelector("#mink_5_container").addEventListener("animationiteration", minkRestart);
+  document.querySelector("#vote_1_container").addEventListener("animationiteration", voteRestart);
+  document.querySelector("#vote_2_container").addEventListener("animationiteration", voteRestart);
+}
 
-  document.querySelector("#mink_1_container").addEventListener("animationend", minkGone1);
+function clickMink() {
+  let mink = this;
+
+  mink.removeEventListener("mousedown", clickMink);
+
+  mink.classList.add("paused");
+
+  mink.querySelector("img").classList.add("disapear");
+
+  mink.addEventListener("animationend", minkGone);
 
   increasePoints();
 }
 
-function minkGone1() {
-  document.querySelector("#mink_1_container").removeEventListener("animationend", minkGone1);
+function minkGone() {
+  let mink = this;
+  mink.removeEventListener("animationend", minkGone);
 
-  document.querySelector("#mink_1_sprite").classList.remove("disapear");
+  mink.querySelector("img").classList.remove("disapear");
 
-  document.querySelector("#mink_1_container").classList.remove("paused");
+  mink.classList.remove("paused");
 
-  document.querySelector("#mink_1_container").classList.remove("mink_1_move");
-  document.querySelector("#mink_1_container").offsetWidth;
-  document.querySelector("#mink_1_container").classList.add("mink_1_move");
-  document.querySelector("#mink_1_container").addEventListener("mousedown", clickMink1);
+  minkRestart.call(this);
+
+  mink.addEventListener("mousedown", clickMink);
 }
 
-function clickMink2() {
-  document.querySelector("#mink_2_container").removeEventListener("mousedown", clickMink2);
+function minkRestart() {
+  let mink = this;
+  mink.classList.remove("minkMove1", "minkMove2", "minkMove3", "minkMove4", "minkMove5");
+  mink.offsetWidth;
 
-  document.querySelector("#mink_2_container").classList.add("paused");
-
-  document.querySelector("#mink_2_sprite").classList.add("disapear");
-
-  document.querySelector("#mink_2_container").addEventListener("animationend", minkGone2);
+  let ani = Math.floor(Math.random() * 5) + 1;
+  mink.classList.add("minkMove" + ani);
 }
 
-function minkGone2() {
-  document.querySelector("#mink_2_container").removeEventListener("animationend", minkGone2);
+function clickVote() {
+  let vote = this;
 
-  document.querySelector("#mink_2_sprite").classList.remove("disapear");
+  vote.removeEventListener("mousedown", clickVote);
 
-  document.querySelector("#mink_2_container").classList.remove("paused");
+  vote.classList.add("paused");
 
-  document.querySelector("#mink_2_container").classList.remove("mink_2_move");
-  document.querySelector("#mink_2_container").offsetWidth;
-  document.querySelector("#mink_2_container").classList.add("mink_2_move");
-  document.querySelector("#mink_2_container").addEventListener("mousedown", clickMink2);
+  vote.querySelector("img").classList.add("disapear2");
+
+  vote.addEventListener("animationend", voteGone);
 }
 
-function clickMink3() {
-  document.querySelector("#mink_3_container").removeEventListener("mousedown", clickMink3);
+function voteGone() {
+  let vote = this;
+  vote.removeEventListener("animationend", voteGone);
 
-  document.querySelector("#mink_3_container").classList.add("paused");
+  vote.querySelector("img").classList.remove("disapear2");
 
-  document.querySelector("#mink_3_sprite").classList.add("disapear");
+  vote.classList.remove("paused");
 
-  document.querySelector("#mink_3_container").addEventListener("animationend", minkGone3);
+  voteRestart.call(this);
+
+  vote.addEventListener("mousedown", clickVote);
 }
 
-function minkGone3() {
-  document.querySelector("#mink_3_container").removeEventListener("animationend", minkGone3);
+function voteRestart() {
+  let vote = this;
+  vote.classList.remove("voteMove1", "voteMove2");
+  vote.offsetWidth;
 
-  document.querySelector("#mink_3_sprite").classList.remove("disapear");
-
-  document.querySelector("#mink_3_container").classList.remove("paused");
-
-  document.querySelector("#mink_3_container").classList.remove("mink_3_move");
-  document.querySelector("#mink_3_container").offsetWidth;
-  document.querySelector("#mink_3_container").classList.add("mink_3_move");
-  document.querySelector("#mink_3_container").addEventListener("mousedown", clickMink3);
-}
-
-function clickMink4() {
-  document.querySelector("#mink_4_container").removeEventListener("mousedown", clickMink4);
-
-  document.querySelector("#mink_4_container").classList.add("paused");
-
-  document.querySelector("#mink_4_sprite").classList.add("disapear");
-
-  document.querySelector("#mink_4_container").addEventListener("animationend", minkGone4);
-}
-
-function minkGone4() {
-  document.querySelector("#mink_4_container").removeEventListener("animationend", minkGone4);
-
-  document.querySelector("#mink_4_sprite").classList.remove("disapear");
-
-  document.querySelector("#mink_4_container").classList.remove("paused");
-
-  document.querySelector("#mink_4_container").classList.remove("mink_4_move");
-  document.querySelector("#mink_4_container").offsetWidth;
-  document.querySelector("#mink_4_container").classList.add("mink_4_move");
-  document.querySelector("#mink_4_container").addEventListener("mousedown", clickMink4);
-}
-
-function clickMink5() {
-  document.querySelector("#mink_5_container").removeEventListener("mousedown", clickMink5);
-
-  document.querySelector("#mink_5_container").classList.add("paused");
-
-  document.querySelector("#mink_5_sprite").classList.add("disapear");
-
-  document.querySelector("#mink_5_container").addEventListener("animationend", minkGone5);
-}
-
-function minkGone5() {
-  document.querySelector("#mink_5_container").removeEventListener("animationend", minkGone5);
-
-  document.querySelector("#mink_5_sprite").classList.remove("disapear");
-
-  document.querySelector("#mink_5_container").classList.remove("paused");
-
-  document.querySelector("#mink_5_container").classList.remove("mink_5_move");
-  document.querySelector("#mink_5_container").offsetWidth;
-  document.querySelector("#mink_5_container").classList.add("mink_5_move");
-  document.querySelector("#mink_5_container").addEventListener("mousedown", clickMink5);
-}
-
-function clickVote1() {
-  document.querySelector("#vote_1_container").removeEventListener("mousedown", clickVote1);
-
-  document.querySelector("#vote_1_container").classList.add("paused");
-
-  document.querySelector("#vote_1_sprite").classList.add("disapear2");
-
-  document.querySelector("#vote_1_container").addEventListener("animationend", voteGone1);
-}
-
-function voteGone1() {
-  document.querySelector("#vote_1_container").removeEventListener("animationend", voteGone1);
-
-  document.querySelector("#vote_1_sprite").classList.remove("disapear2");
-
-  document.querySelector("#vote_1_container").classList.remove("paused");
-
-  document.querySelector("#vote_1_container").classList.remove("vote_1_move");
-  document.querySelector("#vote_1_container").offsetWidth;
-  document.querySelector("#vote_1_container").classList.add("vote_1_move");
-  document.querySelector("#vote_1_container").addEventListener("mousedown", clickVote1);
-}
-
-function clickVote2() {
-  document.querySelector("#vote_2_container").removeEventListener("mousedown", clickVote2);
-
-  document.querySelector("#vote_2_container").classList.add("paused");
-
-  document.querySelector("#vote_2_sprite").classList.add("disapear2");
-
-  document.querySelector("#vote_2_container").addEventListener("enimationend", voteGone2);
-}
-
-function voteGone2() {
-  document.querySelector("#vote_2_container").removeEventListener("animationend", voteGone2);
-
-  document.querySelector("#vote_2_sprite").classList.remove("disapear2");
-
-  document.querySelector("#vote_2_container").classList.remove("paused");
-
-  document.querySelector("#vote_2_container").classList.remove("vote_2_move");
-  document.querySelector("#vote_2_container").offsetWidth;
-  document.querySelector("#vote_2_container").classList.add("vote_2_move");
-  document.querySelector("#vote_2_container").addEventListener("mousedown", clickVote2);
+  let ani = Math.floor(Math.random() * 2) + 1;
+  vote.classList.add("voteMove" + ani);
 }
 
 function increasePoints() {
