@@ -21,7 +21,7 @@
 
 .mink_2_move {
   animation-name: mink_2_move;
-  animation-duration: 6s;
+  animation-duration: 4s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
   animation-delay: 4s;
@@ -30,18 +30,18 @@
 
 @keyframes mink_2_move {
   0% {
-    transform: translate(-500%, 200%);
+    transform: translate(-550%, 200%);
   }
   50% {
-    transform: translate(100%, 200%);
+    transform: translate(-100%, 200%);
   }
   100% {
-    transform: translate(490%, 0%);
+    transform: translate(220%, 100%);
   }
 }
 
 .mink_3_move {
-  animation-name: mink_3_move;
+  animation-name: mink_3_ove;
   animation-duration: 6s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
@@ -71,7 +71,7 @@
 }
 
 .mink_4_move {
-  animation-name: mink_4_move;
+  animation-name: mink_4_ove;
   animation-duration: 6s;
   animation-timing-function: ease-in;
   animation-iteration-count: infinite;
@@ -92,7 +92,7 @@
 }
 
 .mink_5_move {
-  animation-name: mink_5_move;
+  animation-name: mink_5_ove;
   animation-duration: 8s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;

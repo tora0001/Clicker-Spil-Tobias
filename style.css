@@ -33,6 +33,7 @@ img {
   display: grid;
   top: 1.7vw;
 }
+
 #time_board {
   display: grid;
 }
@@ -73,8 +74,8 @@ img {
 #mink_2_container {
   width: 12%;
   position: absolute;
-  top: 25%;
-  left: 20%;
+  top: 40%;
+  left: 50%;
 }
 
 #mink_3_container {

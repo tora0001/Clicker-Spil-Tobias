@@ -1,13 +1,10 @@
 "use strict";
-console.log("script.js is running");
 
 window.addEventListener("load", start);
 
 let points = 0;
 
 function start() {
-  console.log("script.js is running");
-
   points = 0;
 
   document.querySelector("#mink_1_container").classList.add("mink_1_move");
