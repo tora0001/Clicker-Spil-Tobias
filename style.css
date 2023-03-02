@@ -24,6 +24,45 @@ img {
   height: 100%;
 }
 
+#game_ui {
+  position: absolute;
+  font-size: 2vw;
+  font-weight: bold;
+  text-align: left;
+  color: wheat;
+  display: grid;
+  top: 1.7vw;
+}
+#time_board {
+  display: grid;
+}
+
+#timer {
+  margin-left: 11vw;
+}
+
+#score_board {
+  display: grid;
+}
+
+#points {
+  white-space: nowrap;
+  position: absolute;
+  text-align: right;
+  margin-left: 53vw;
+  margin-top: -2.35vw;
+}
+
+#life_board {
+  display: grid;
+}
+
+#lives {
+  position: absolute;
+  margin-left: 75vw;
+  margin-top: -2.35vw;
+}
+
 #mink_1_container {
   width: 12%;
   position: absolute;
