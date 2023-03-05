@@ -1,11 +1,48 @@
 "use strict";
 
-window.addEventListener("load", start);
+window.addEventListener("load", ready);
 
 let points = 0;
+let lives = 0;
 
-function start() {
+function ready() {
+  document.querySelector("#start").classList.remove("hidden");
+  document.querySelector("#btn_start").addEventListener("click", startGame);
+  document.querySelector("#btn_restart").addEventListener("click", startGame);
+  document.querySelector("#btn_replay").addEventListener("click", showStartScreen);
+}
+
+function showGameScreen() {
+  document.querySelector("#start").classList.add("hidden");
+  document.querySelector("#game_over").classList.add("hidden");
+  document.querySelector("#level_complete").classList.add("hidden");
+}
+
+function showStartScreen() {
+  document.querySelector("#start").classList.remove("hidden");
+  document.querySelector("#game_over").classList.add("hidden");
+  document.querySelector("#level_complete").classList.add("hidden");
+}
+
+function resetLives() {
+  lives = 3;
+  document.querySelector("#heart1").classList.remove("broken_heart");
+  document.querySelector("#heart2").classList.remove("broken_heart");
+  document.querySelector("#heart3").classList.remove("broken_heart");
+  document.querySelector("#heart1").classList.add("active_heart");
+  document.querySelector("#heart2").classList.add("active_heart");
+  document.querySelector("#heart3").classList.add("active_heart");
+}
+
+function resetPoints() {
   points = 0;
+  displayPoints();
+}
+
+function startGame() {
+  resetLives();
+  resetPoints();
+  showGameScreen();
 
   startAnimationer();
 
@@ -65,7 +102,6 @@ function minkGone() {
   mink.querySelector("img").classList.remove("disapear");
 
   mink.classList.remove("paused");
-
   minkRestart.call(this);
 
   mink.addEventListener("mousedown", clickMink);
@@ -90,6 +126,8 @@ function clickVote() {
   vote.querySelector("img").classList.add("disapear2");
 
   vote.addEventListener("animationend", voteGone);
+
+  decreaseLives();
 }
 
 function voteGone() {
@@ -117,11 +155,54 @@ function voteRestart() {
 function increasePoints() {
   points++;
   displayPoints();
-  if (points == 20) {
+  if (points == 5) {
     levelComplete();
   }
 }
 
 function displayPoints() {
   document.querySelector("#points").textContent = points;
+}
+
+function decreaseLives() {
+  showDecreasedLives();
+  if (lives <= 1) {
+    gameOver();
+  } else {
+    showDecreasedLives();
+  }
+  lives--;
+}
+
+function showDecreasedLives() {
+  document.querySelector("#heart" + lives).classList.remove("active_heart");
+  document.querySelector("#heart" + lives).classList.add("broken_heart");
+}
+
+function gameOver() {
+  document.querySelector("#game_over").classList.remove("hidden");
+  stopGame();
+}
+
+function levelComplete() {
+  document.querySelector("#level_complete").classList.remove("hidden");
+  stopGame();
+}
+
+function stopGame() {
+  document.querySelector("#mink_1_container").classList.remove("minkMove1", "minkMove2", "minkMove3", "minkMove4", "minkMove5");
+  document.querySelector("#mink_2_container").classList.remove("minkMove1", "minkMove2", "minkMove3", "minkMove4", "minkMove5");
+  document.querySelector("#mink_3_container").classList.remove("minkMove1", "minkMove2", "minkMove3", "minkMove4", "minkMove5");
+  document.querySelector("#mink_4_container").classList.remove("minkMove1", "minkMove2", "minkMove3", "minkMove4", "minkMove5");
+  document.querySelector("#mink_5_container").classList.remove("minkMove1", "minkMove2", "minkMove3", "minkMove4", "minkMove5");
+  document.querySelector("#vote_1_container").classList.remove("voteMove1", "voteMove2");
+  document.querySelector("#vote_2_container").classList.remove("voteMove1", "voteMove2");
+
+  document.querySelector("#mink_1_container").removeEventListener("mousedown", clickMink);
+  document.querySelector("#mink_2_container").removeEventListener("mousedown", clickMink);
+  document.querySelector("#mink_3_container").removeEventListener("mousedown", clickMink);
+  document.querySelector("#mink_4_container").removeEventListener("mousedown", clickMink);
+  document.querySelector("#mink_5_container").removeEventListener("mousedown", clickMink);
+  document.querySelector("#vote_1_container").removeEventListener("mousedown", clickVote);
+  document.querySelector("#vote_2_container").removeEventListener("mousedown", clickVote);
 }

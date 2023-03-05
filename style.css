@@ -46,8 +46,36 @@ img {
   display: grid;
 }
 
+#game_over {
+  grid-area: 1 /1;
+  z-index: 999;
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  background-image: linear-gradient(150deg, #c90303 0%, #790909 100%);
+  color: #ffffff;
+}
+
+#level_complete,
+#start {
+  grid-area: 1 /1;
+  z-index: 999;
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  background-image: linear-gradient(150deg, #20c903 0%, #09793b 100%);
+  color: #ffffff;
+}
+
+.hidden,
+#game_over.hidden,
+#level_complete.hidden,
+#game.hidden,
+#start.hidden {
+  display: none;
+}
+
 #points {
-  white-space: nowrap;
   position: absolute;
   text-align: right;
   margin-left: 53vw;
@@ -56,12 +84,21 @@ img {
 
 #life_board {
   display: grid;
+  grid-template-columns: 2vw 2vw 2vw;
 }
 
-#lives {
-  position: absolute;
-  margin-left: 75vw;
-  margin-top: -2.35vw;
+#life_board img {
+  margin-left: 74vw;
+  margin-top: -2vw;
+  width: 100%;
+}
+
+.active_heart {
+  filter: grayscale(0%);
+}
+
+.broken_heart {
+  filter: grayscale(100%);
 }
 
 #mink_1_container {
@@ -111,4 +148,15 @@ img {
   position: absolute;
   top: 60%;
   left: 60%;
+}
+
+button {
+  padding: 0.5em 1em;
+  font-size: 2em;
+  margin: auto;
+  background-color: #ffad01;
+  color: #fff4bf;
+  border: 10px solid #ffc72e;
+  cursor: pointer;
+  border-radius: 10px;
 }
