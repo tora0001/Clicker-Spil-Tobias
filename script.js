@@ -8,7 +8,7 @@ let lives = 0;
 function ready() {
   document.querySelector("#start").classList.remove("hidden");
   document.querySelector("#btn_start").addEventListener("click", startGame);
-  document.querySelector("#btn_restart").addEventListener("click", startGame);
+  document.querySelector("#btn_restart").addEventListener("click", showStartScreen);
   document.querySelector("#btn_replay").addEventListener("click", showStartScreen);
 }
 
@@ -44,7 +44,10 @@ function startGame() {
   resetPoints();
   showGameScreen();
 
+  document.querySelector("#sound_background").play();
   startAnimationer();
+
+  startTimer();
 
   registrerClicks();
 
@@ -92,6 +95,9 @@ function clickMink() {
 
   mink.addEventListener("animationend", minkGone);
 
+  document.querySelector("#sound_mink").currentTime = 0;
+  document.querySelector("#sound_mink").play();
+
   increasePoints();
 }
 
@@ -102,8 +108,8 @@ function minkGone() {
   mink.querySelector("img").classList.remove("disapear");
 
   mink.classList.remove("paused");
-  minkRestart.call(this);
 
+  minkRestart.call(this);
   mink.addEventListener("mousedown", clickMink);
 }
 
@@ -155,7 +161,7 @@ function voteRestart() {
 function increasePoints() {
   points++;
   displayPoints();
-  if (points == 5) {
+  if (points == 20) {
     levelComplete();
   }
 }
@@ -171,6 +177,8 @@ function decreaseLives() {
   } else {
     showDecreasedLives();
   }
+  document.querySelector("#sound_vote").currentTime = 0;
+  document.querySelector("#sound_vote").play();
   lives--;
 }
 
@@ -181,11 +189,15 @@ function showDecreasedLives() {
 
 function gameOver() {
   document.querySelector("#game_over").classList.remove("hidden");
+  document.querySelector("#sound_gameOver").currentTime = 0;
+  document.querySelector("#sound_gameOver").play();
   stopGame();
 }
 
 function levelComplete() {
   document.querySelector("#level_complete").classList.remove("hidden");
+  document.querySelector("#sound_levelComplete").currentTime = 0;
+  document.querySelector("#sound_levelComplete").play();
   stopGame();
 }
 
@@ -205,4 +217,22 @@ function stopGame() {
   document.querySelector("#mink_5_container").removeEventListener("mousedown", clickMink);
   document.querySelector("#vote_1_container").removeEventListener("mousedown", clickVote);
   document.querySelector("#vote_2_container").removeEventListener("mousedown", clickVote);
+
+  document.querySelector("#time_sprite").classList.remove("shrink");
+
+  document.querySelector("#sound_background").pause();
+  document.querySelector("#sound_background").currentTime = 0;
+}
+
+function startTimer() {
+  document.querySelector("#time_sprite").classList.add("shrink");
+  document.querySelector("#time_sprite").addEventListener("animationend", timeIsUp);
+}
+
+function timeIsUp() {
+  if (points >= 20) {
+    levelComplete();
+  } else {
+    gameOver();
+  }
 }

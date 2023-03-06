@@ -39,7 +39,9 @@
 
         <div id="game_ui">
           <div id="time_board">
-            <div id="timer">time</div>
+            <div id="time_container">
+              <div id="time_sprite"></div>
+            </div>
           </div>
           <div id="score_board">
             <div id="points">0</div>
@@ -52,19 +54,20 @@
         </div>
       </div>
       <div id="start" class="hidden">
-        <h2>Mette's Mink Jagt</h2>
-        <p>Få 20 point inden tiden løber ud</p>
         <button id="btn_start">Start Spil</button>
       </div>
       <div id="game_over" class="hidden">
-        <h2>Du Har Tabt</h2>
         <button id="btn_restart">Prøv Igen</button>
       </div>
       <div id="level_complete" class="hidden">
-        <h2>Du Har Vundet!</h2>
         <button id="btn_replay">Spil Igen</button>
       </div>
     </div>
+    <audio id="sound_background" src="Lyde\background.mp3"></audio>
+    <audio id="sound_gameOver" src="Lyde\lost.mp3"></audio>
+    <audio id="sound_mink" src="Lyde\squeak.mp3"></audio>
+    <audio id="sound_levelComplete" src="Lyde\win.mp3"></audio>
+    <audio id="sound_vote" src="Lyde\wrong.mp3"></audio>
     <script src="script.js"></script>
   </body>
 </html>

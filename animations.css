@@ -187,3 +187,25 @@
     opacity: 0;
   }
 }
+
+.shrink {
+  animation-name: shrink_timer;
+  animation-duration: 25s;
+  animation-iteration-count: 1;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+
+@keyframes shrink_timer {
+  0% {
+    scale: 1 1;
+    background-color: limegreen;
+  }
+  50% {
+    background-color: rgb(255, 230, 0);
+  }
+  100% {
+    scale: 0 1;
+    background-color: red;
+  }
+}
