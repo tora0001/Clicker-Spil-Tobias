@@ -2,6 +2,7 @@
 
 window.addEventListener("load", ready);
 
+let isGameRunning = false;
 let points = 0;
 let lives = 0;
 
@@ -40,6 +41,7 @@ function resetPoints() {
 }
 
 function startGame() {
+  isGameRunning = true;
   resetLives();
   resetPoints();
   showGameScreen();
@@ -75,13 +77,19 @@ function registrerClicks() {
 }
 
 function animationRestart() {
-  document.querySelector("#mink_1_container").addEventListener("animationiteration", minkRestart);
-  document.querySelector("#mink_2_container").addEventListener("animationiteration", minkRestart);
-  document.querySelector("#mink_3_container").addEventListener("animationiteration", minkRestart);
-  document.querySelector("#mink_4_container").addEventListener("animationiteration", minkRestart);
-  document.querySelector("#mink_5_container").addEventListener("animationiteration", minkRestart);
+  document.querySelector("#mink_1_container").addEventListener("animationiteration", minkAttack);
+  document.querySelector("#mink_2_container").addEventListener("animationiteration", minkAttack);
+  document.querySelector("#mink_3_container").addEventListener("animationiteration", minkAttack);
+  document.querySelector("#mink_4_container").addEventListener("animationiteration", minkAttack);
+  document.querySelector("#mink_5_container").addEventListener("animationiteration", minkAttack);
   document.querySelector("#vote_1_container").addEventListener("animationiteration", voteRestart);
   document.querySelector("#vote_2_container").addEventListener("animationiteration", voteRestart);
+}
+
+function minkAttack() {
+  console.log("mink attack");
+  minkRestart.call(this);
+  decreaseLives();
 }
 
 function clickMink() {
@@ -108,8 +116,10 @@ function minkGone() {
   mink.querySelector("img").classList.remove("disapear");
 
   mink.classList.remove("paused");
+  if (isGameRunning) {
+    minkRestart.call(this);
+  }
 
-  minkRestart.call(this);
   mink.addEventListener("mousedown", clickMink);
 }
 
@@ -222,6 +232,7 @@ function stopGame() {
 
   document.querySelector("#sound_background").pause();
   document.querySelector("#sound_background").currentTime = 0;
+  isGameRunning = false;
 }
 
 function startTimer() {
