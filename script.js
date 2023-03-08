@@ -88,7 +88,9 @@ function animationRestart() {
 
 function minkAttack() {
   console.log("mink attack");
-  minkRestart.call(this);
+  if (isGameRunning) {
+    minkRestart.call(this);
+  }
   decreaseLives();
 }
 
@@ -154,7 +156,9 @@ function voteGone() {
 
   vote.classList.remove("paused");
 
-  voteRestart.call(this);
+  if (isGameRunning) {
+    voteRestart.call(this);
+  }
 
   vote.addEventListener("mousedown", clickVote);
 }
